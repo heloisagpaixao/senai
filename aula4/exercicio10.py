@@ -17,5 +17,3 @@ def soma ():
         print(f'O resultado será {soma}!')
 
 (soma())
-
-            

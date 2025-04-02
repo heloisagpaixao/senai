@@ -5,5 +5,3 @@ num2=float(input('Digite o segundo valor:'))
 result=(num+num2)
 #exemplo de utilização de F string
 print(f"O resultado da soma será: {result:.2f}")
-
-

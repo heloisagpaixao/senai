@@ -20,5 +20,3 @@ while x < 10:
 
 print('As letras digitadas foram:', (L))
 print(f'Dessas 10 letras, {cont} são consoantes!')
-
-

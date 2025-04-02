@@ -14,6 +14,3 @@ while True:
         cont=cont+1
 
 print(f'Existem {cont} números que estão entre 100 e 200.')
-
-
-

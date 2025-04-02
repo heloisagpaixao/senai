@@ -11,9 +11,3 @@ for v in range (0, valor_repetir):
     #cont=cont+1
 
 print('A média dos valores será de %.2f.' %(acum/valor_repetir))
-
-
-    
-
-
-

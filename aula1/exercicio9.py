@@ -5,4 +5,3 @@ ano=float(input('Digite a quantos anos é fumante:'))
 temp=(quant*0.00694444)
 tempt=((ano*365)*temp)
 print('O tempo de vida que o fumante perderá é de %.2f dias.'%tempt)
-

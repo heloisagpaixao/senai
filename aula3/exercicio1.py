@@ -15,4 +15,3 @@ while True:
 
     resposta=num*3
     print(f'O resultado será de {resposta}')
-    

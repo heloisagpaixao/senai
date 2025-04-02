@@ -6,4 +6,3 @@ diar=(dia*60)
 kmr=(km*0.15)
 result=(diar+kmr)
 print('O valor que você deve pagar é de R$',result)
-
