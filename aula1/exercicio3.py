@@ -1,0 +1,11 @@
+#-*-coding:UTF-8-*-
+print('Olá usuário, me dê o valor em dias, horas, minutos e segundos.')
+dia=float(input('Digite os dias:'))
+hora=float(input('Digite as horas:'))
+minuto=float(input('Digite os minutos:'))
+segs=float(input('Digite os segundos:'))
+dresult=(dia*86400)
+hresult=(hora*3600)
+mresult=(minuto*60)
+result=(dresult+hresult+mresult+segs)
+print('O resultado em segundos será:',result)
