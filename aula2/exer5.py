@@ -23,6 +23,3 @@ elif tipo=='I' and quantkwh>10000 and quantkwh<=15000:
 
 else:
     print('Alguma informação é inválida!')
-
-
-    

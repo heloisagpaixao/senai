@@ -18,5 +18,3 @@ elif operacao=='divisão':
 
 else:
     print('A operação é inválida!')
-
-

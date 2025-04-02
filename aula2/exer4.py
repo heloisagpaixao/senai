@@ -10,5 +10,3 @@ if prestacao <= (salario*30/100):
 
 elif prestacao > (salario*30/100):
     print('O valor da prestação será de R$ %.2f, você não poderá pegar um empréstimo.' %prestacao)
-
-

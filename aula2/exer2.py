@@ -7,6 +7,3 @@ if salario <= 1250.00:
 
 elif salario >1250.00:
     print('Seu novo salário será R$ %.2f' %(salario*15/100+salario))
-
-
-

@@ -8,4 +8,3 @@ if velc < 80:
 
 elif velc >= 80:
     print('Você ultrapassou o limite de velocidade, você deverá pagar R$%.2f '%(amais*5))
-    
