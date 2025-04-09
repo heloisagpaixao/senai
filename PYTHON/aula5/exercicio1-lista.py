@@ -6,12 +6,13 @@ acum=0
 
 for mes in range (0,12):
     temp=float(input('Digite a temperatura: '))
-    L.append(mes)
+    L.append(temp)
     cont+=1
     acum+=temp
 
+
 print(f'As temperaturas digitadas foram: {L}')
-(L.sort)
+(L.sort())
 print('A média das temperaturas foi: %.2f ºC!' %(acum/cont))
 print(f'A maior temperatura foi de: {L[-1]} ºC!')
 print(f'A menor temperatura foi de: {L[0]} ºC!')
