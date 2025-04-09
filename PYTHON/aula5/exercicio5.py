@@ -6,3 +6,6 @@ V=[6, 7, 8, 9, 10]
 
 print ('A primeira sequência é:', (L))
 print ('A segunda sequência é:', (V))
+
+L.append(V)
+print(L)
