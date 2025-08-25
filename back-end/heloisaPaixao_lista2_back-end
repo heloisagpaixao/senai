@@ -1,0 +1,101 @@
+// Exercício 1
+// console.log(`O resultado da soma é ${soma(7,4)}`)
+// function soma(a,b) {
+// 	return a + b
+// }
+
+// Exercício 2
+//  console.log(`O resultado da sua média é ${media(7, 10, 9).toFixed(2)}`)
+//  function media(a, b, c) {
+//  	return (a + b + c) / 3
+//  }
+
+// Exercício 3
+// const triangulo = function (b, h) {
+// 	return (7 * 4) / 3
+// }
+// result = triangulo (5, 6)
+// console.log(`A área do triângulo será de ${result.toFixed(2)} cm²!`)
+
+// Exercício 4
+// let parOuImpar = function (n) {
+// 	if (n % 2 == 0) {
+//         return console.log(`O número ${n} é par!`)
+// }   else {
+//         return console.log(`O número ${n} é ímpar!`)
+// }}
+// parOuImpar(5)
+
+// Exercício 5
+// let maior = (a, b) => {
+//     if (a == b) {
+//         return console.log(`Os números são iguais!`)
+//     } else if (a > b) {
+//         return console.log(`O número ${a} é o maior!`)
+//     } else
+//         return console.log(`O número ${b} é o maior!`)
+// }
+// maior(7, 4)
+
+// Exercício 6
+// let lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// let par = (lista) => {
+//     if (lista % 2 == 0 ) {
+//         return console.log(lista)
+// }}
+// for(let i = 0; i < lista.length; i++){
+//     par(lista[i])
+// }
+
+// Exercício 7
+// (function(){
+// 	return console.log(`.`)
+// })()
+
+// Exerício 8
+// (function(){
+//     let n = 6
+// 	return console.log(`O quadrado do número ${n} é igual a ${n*n}!!!`)
+// })()
+
+//Exercício 9
+// function executarCallback(callback){ 
+// 	callback()
+// }
+// executarCallback(() => {console.log(`Seja bem-vindo, usuário!`)})
+
+// Exercício 10
+//  let lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//  let dobro = (lista) => {console.log (lista*2)}
+//  function executarCallback(lista, callback){
+//      callback(lista)
+// }
+// for(let i = 0; i < lista.length; i++){
+//     executarCallback(lista[i], dobro)
+// }
+
+// Exercício 11
+// function decrescente(n){
+//     if (n === 1) {
+//         return 1;
+//     } else {
+//         console.log(n)
+//         return decrescente(n-1)
+//     }
+// }
+// console.log(decrescente(10));
+
+// Exercício 12
+// async function segundos() {
+//     setTimeout(() => {console.log(`.`)}, 2000)
+// }
+// segundos()
+
+// Exercício 13
+// async function dobro(n) {
+//      setTimeout(() => {console.log(`O dobro do número ${n} é igual a ${n*2}!`)}, 1000)
+// }
+// dobro(2)
+// console.log(`Vou fazer o cálculo de dobro daqui a um segundo!`)
+
+// Exercício 14
