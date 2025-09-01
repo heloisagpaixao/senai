@@ -99,3 +99,8 @@
 // console.log(`Vou fazer o cálculo de dobro daqui a um segundo!`)
 
 // Exercício 14
+async function mensagem (){
+setTimeout(() => {console.log(`Após três segundos!`)}, 3000)
+}
+console.log(`Olá paciente! Aguarde 3 segundos para entrar no sistema!`)
+mensagem()
