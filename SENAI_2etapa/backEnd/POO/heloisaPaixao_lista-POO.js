@@ -57,26 +57,54 @@
 
 
 // Exercício 4
-class Retangulo {
-    constructor(base, altura){
-    this.base = base;
-    this.altura = altura;
+// class Retangulo {
+//     constructor(base, altura){
+//     this.base = base;
+//     this.altura = altura;
+// }
+
+// area (){
+//     return (this.base * this.altura)
+// }
+
+// perimetro(){
+//     return (this.base * 2) + (this.altura * 2)
+// }
+
+// exibir(){
+//     return console.log(`O retângulo tem ${this.area()} cm² de área e ${this.perimetro()} cm de perímetro!`)
+// }
+// }
+
+// let retangulo1 = new Retangulo(4, 5)
+// retangulo1.area()
+// retangulo1.perimetro()
+// retangulo1.exibir()
+
+
+// Exercício 5
+class Carro {
+    constructor(marcaModelo, combustivel){
+    this.marcaModelo = marcaModelo;
+    this.combustivel = combustivel;
+    }
+
+abastecer (litros){
+    if (litros <= this.combustivel){
+        this.combustivel += litros
+        console.log(`Tanque abastecido!. Quantidade atual de ${this.combustivel} L.`)
+    } else {
+        console.log(`O tanque já está cheio!`)
+    }}
+
+dirigir(km){
+    
+
 }
 
-area (){
-    return (this.base * this.altura)
+
 }
 
-perimetro(){
-    return (this.base * 2) + (this.altura * 2)
-}
 
-exibir(){
-    return console.log(`O retângulo tem ${this.area()} cm² de área e ${this.perimetro()} cm de perímetro!`)
-}
-}
 
-let retangulo1 = new Retangulo(4, 5)
-retangulo1.area()
-retangulo1.perimetro()
-retangulo1.exibir()
+}
