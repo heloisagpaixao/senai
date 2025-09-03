@@ -98,13 +98,9 @@ abastecer (litros){
     }}
 
 dirigir(km){
-    
-
-}
 
 
 }
-
 
 
 }
