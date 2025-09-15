@@ -48,25 +48,25 @@
 // pessoa1.saudacao()
 
 
-class Conta {
-    constructor(titular, saldo){
-    this.titular = titular;
-    this.saldo = saldo;
-}
+// class Conta {
+//     constructor(titular, saldo){
+//     this.titular = titular;
+//     this.saldo = saldo;
+// }
 
-depositar (valor) {
-    this.saldo += valor
-    console.log(`Depósito realizado. Saldo atual de R$ ${this.saldo}`)
-}
-sacar (valor) {
-    if(valor <= this.saldo){
-        this.saldo -= valor
-        console.log(`Saque realizado. Saldo atual de R$ ${this.saldo}.`)
-    } else {
-        console.log(`Saldo insuficiente!`)
-    }
-}}
+// depositar (valor) {
+//     this.saldo += valor
+//     console.log(`Depósito realizado. Saldo atual de R$ ${this.saldo}`)
+// }
+// sacar (valor) {
+//     if(valor <= this.saldo){
+//         this.saldo -= valor
+//         console.log(`Saque realizado. Saldo atual de R$ ${this.saldo}.`)
+//     } else {
+//         console.log(`Saldo insuficiente!`)
+//     }
+// }}
 
-let conta1 =  new Conta(`Celso`, 0)
-conta1.depositar(2000)
-conta1.sacar(510)
+// let conta1 =  new Conta(`Celso`, 0)
+// conta1.depositar(2000)
+// conta1.sacar(510)
