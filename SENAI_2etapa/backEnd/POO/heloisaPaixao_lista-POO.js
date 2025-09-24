@@ -83,29 +83,29 @@
 
 
 // Exercício 5
-// class Carro {
-//     constructor(marcaModelo, combustivel){
-//     this.marcaModelo = marcaModelo;
-//     this.combustivel = combustivel;
-//     }
+class Carro {
+    constructor(marcaModelo, combustivel){
+    this.marcaModelo = marcaModelo;
+    this.combustivel = combustivel;
+    }
 
-// abastecer (litros){
-//     if (this.marcaModelo < litros + this.combustivel){
-//         return console.log (`O tanque já está cheio!`)
-//     } else {
-//         this.combustivel += litros
-//         return console.log (`Tanque abastecido! Agora você tem ${this.combustivel} L.`)
-//     }}
+abastecer (litros){
+    if (this.marcaModelo < litros + this.combustivel){
+        return console.log (`O tanque já está cheio!`)
+    } else {
+        this.combustivel += litros
+        return console.log (`Tanque abastecido! Agora você tem ${this.combustivel} L.`)
+    }}
 
-// dirigir (km){
-//     if (this.combustivel < km/10 ){
-//         return console.log(`A quantidade de combustível é insuficiente. Você tem apenas ${this.combustivel} L.`)
-//     } else {
-//         this.combustivel -= km/10
-//         return console.log (`Você percorreu ${km} km, restam apenas ${this.combustivel} L.`)
-//     }
-// }}
+dirigir (km){
+    if (this.combustivel < km/10 ){
+        return console.log(`A quantidade de combustível é insuficiente. Você tem apenas ${this.combustivel} L.`)
+    } else {
+        this.combustivel -= km/10
+        return console.log (`Você percorreu ${km} km, restam apenas ${this.combustivel} L.`)
+    }
+}}
 
-// let carro1 = new Carro (30, 10)
-// carro1.abastecer(10)
-// carro1.dirigir(5)
+let carro1 = new Carro (30, 10)
+carro1.abastecer(10)
+carro1.dirigir(5)
