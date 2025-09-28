@@ -171,3 +171,88 @@
 
 
 // Exercício 13
+// class Pagamento{
+//     formaDePagamento(){
+// }}
+
+// class CartaoCredito extends Pagamento{
+//     formaDePagamento(){
+//         console.log(`Pagamento com cartão de crédito.`)
+// }}
+
+// class Boleto extends Pagamento{
+//     formaDePagamento(){
+//         console.log(`Pagamento com boleto.`)
+// }}
+
+// class Pix extends Pagamento{
+//     formaDePagamento(){
+//         console.log(`Pagamento com Pix.`)
+// }}
+
+// let cartaocredito1 = new CartaoCredito()
+// cartaocredito1.formaDePagamento()
+
+// let boleto1 = new Boleto()
+// boleto1.formaDePagamento()
+
+// let pix1 = new Pix()
+// pix1.formaDePagamento()
+
+// // Exercício 14 - NAO FINALIZADO
+// class Transporte{
+//     mover(){
+// }}
+
+// class Carro extends Transporte{
+//     mover(){
+//         console.log(`O carro anda pela estrada.`)
+// }}
+
+// class Bicicleta extends Transporte{
+//     mover(){
+//         console.log(`A bicicleta anda pela ciclovia.`)
+// }}
+
+// class Aviao extends Transporte{
+//     mover(){
+//         console.log(`O avião voa pelo céu.`)
+// }}
+
+// let carro1 = new Carro()
+// carro1.mover()
+
+// let bicicleta1 = new Bicicleta()
+// bicicleta1.mover()
+
+// let aviao1 = new Aviao()
+// aviao1.mover()
+
+// // Exercício 15
+// class Mensagem{
+//     enviar(){
+// }}
+
+// class Email extends Mensagem{
+//     enviar(){
+//         console.log(`Enviando email`)
+// }}
+
+// class SMS extends Mensagem{
+//     enviar(){
+//         console.log(`Enviando SMS`)
+// }}
+
+// class WhatsApph extends Mensagem{
+//     enviar(){
+//         console.log(`Enviando mensagem`)
+// }}
+
+// let email1 = new Email()
+// email1.enviar()
+
+// let sms1 = new SMS()
+// sms1.enviar()
+
+// let whatsapp1 = new WhatsApph()
+// whatsapp1.enviar()
