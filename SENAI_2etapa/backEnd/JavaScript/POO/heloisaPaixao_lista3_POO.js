@@ -17,19 +17,19 @@
 // produto1.vender(5)
 
 
-// Exercício 6
- class ContaEnergia {
-    constructor(consumoKwh, valorPorKwh){
-        this.consumoKwh = consumoKwh
-        this.valorPorKwh = valorPorKwh
-    }
+// // Exercício 6
+//  class ContaEnergia {
+//     constructor(consumoKwh, valorPorKwh){
+//         this.consumoKwh = consumoKwh
+//         this.valorPorKwh = valorPorKwh
+//     }
 
-conta(){
-    return console.log(`O valor da conta foi de R$${this.consumoKwh * this.valorPorKwh}!`)
-}}
+// conta(){
+//     return console.log(`O valor da conta foi de R$${this.consumoKwh * this.valorPorKwh}!`)
+// }}
 
-let contaEnergia1 = new ContaEnergia(150, 2)
-contaEnergia1.conta()
+// let contaEnergia1 = new ContaEnergia(150, 2)
+// contaEnergia1.conta()
 
 
 // // Exercício 7
@@ -258,7 +258,7 @@ contaEnergia1.conta()
 // let funcionario3 = new Estagiario(`Heloísa`, 1000)
 
 
-// // Exercício 15
+// // Exercício 15 - NAO FINLIZADO
 // class Investimento {
 //     calcularRendimento(valor, meses){
 // }}
@@ -281,4 +281,65 @@ contaEnergia1.conta()
 // investimento2.calcularRendimento(1000, 5)
 
 
-// Exercício 16
+// // Exercício 16
+// class Imposto {
+//     calcular(valor){
+//         return valor;
+//     }
+// }
+
+// class ICMS extends Imposto {
+//     calcular(valor){
+//         return valor - (valor * 18 / 100);
+//     }
+// }
+
+// class ISS extends Imposto {
+//     calcular(valor){
+//         return valor - (valor * 5 / 100);
+//     }
+// }
+
+// class IRPF extends Imposto {
+//     calcular(valor){
+//         if (valor <=2000){
+//             return console.log(`Isento de IRPF!`)
+//         } else if (valor > 2000 && valor <=5000){
+//             return valor - (valor * 15 / 100)
+//         } else {
+//             return valor - (valor * 27.5 / 100) 
+//         }
+// }}
+
+// let imposto1 = new ICMS()
+// console.log(imposto1.calcular(1000))
+
+// let imposto2 = new ISS()
+// console.log(imposto2.calcular(1000))
+
+// let imposto3 = new IRPF()
+// console.log(imposto3.calcular(6000))
+
+
+// // Exercício 17 - NÃAO FINALIZADO
+// class AplicacaoFinanceira{
+//     simular(valor, meses){}
+// }
+
+// class Poupanca extends AplicacaoFinanceira{
+//     simular(valor, meses){
+//         return console.log(valor + (valor * 0.006 * meses))
+// }}
+
+// class TesouroDireto extends AplicacaoFinanceira{
+//     simular(valor, meses, conta, conta1){
+//         conta = valor + (valor * 0.008 * meses)
+//         conta1 = conta - (conta * 0.10 / 100)
+//         return console.log(conta1)
+// }}
+
+// let aplicacao1 = new Poupanca()
+// aplicacao1.simular(1000, 5)
+
+// let aplicacao2 = new TesouroDireto()
+// aplicacao2.simular(1000, 5)
