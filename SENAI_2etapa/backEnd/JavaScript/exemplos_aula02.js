@@ -65,8 +65,8 @@
 //     num++
 // } while (num < 3);
 
-// let lista = ["Maçã", "Banana", "Laranja"];
-// console.log(lista[0]); // Banana
+let lista = ["Maçã", "Banana", "Laranja"];
+console.log(lista[0]); // Banana
 
 lista.push("Uva"); // Adiciona "Uva" ao final
 lista.pop(); // Remove o último elemento
