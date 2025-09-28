@@ -17,19 +17,19 @@
 // produto1.vender(5)
 
 
-// // Exercício 6
-//  class ContaEnergia {
-//     constructor(consumoKwh, valorPorKwh){
-//         this.consumoKwh = consumoKwh
-//         this.valorPorKwh = valorPorKwh
-//     }
+// Exercício 6
+ class ContaEnergia {
+    constructor(consumoKwh, valorPorKwh){
+        this.consumoKwh = consumoKwh
+        this.valorPorKwh = valorPorKwh
+    }
 
-// conta(){
-//     return console.log(`O valor da conta foi de R$${this.consumoKwh * this.valorPorKwh}!`)
-// }}
+conta(){
+    return console.log(`O valor da conta foi de R$${this.consumoKwh * this.valorPorKwh}!`)
+}}
 
-// let contaEnergia1 = new ContaEnergia(150, 2)
-// contaEnergia1.conta()
+let contaEnergia1 = new ContaEnergia(150, 2)
+contaEnergia1.conta()
 
 
 // // Exercício 7
@@ -133,23 +133,152 @@
 // console.log(`Você possui R$ ${cofrinho1.exibirSaldo()} em seu cofrinho!!`)
 
 
-class Banco{
-    #numero
-    #titular
-    #saldo
-    constructor(numero, titular, saldo){
-        this.#numero = numero,
-        this.#titular = titular,
-        this.#saldo = saldo
-}
+// // Exercício 11
+// class Banco{
+//     #numero
+//     #titular
+//     #saldo
+//     constructor(numero, titular, saldo){
+//         this.#numero = numero,
+//         this.#titular = titular,
+//         this.#saldo = saldo
+// }
 
-abrirConta(nomeTitular, saldoInicial){
-    nomeTitular += this.#titular
-    saldoInicial += this.#saldo
-}
+// abrirConta(nomeTitular, saldoInicial){
+//     nomeTitular = this.#titular
+//     saldoInicial = this.#saldo
+//     return console.log(`Conta de ${this.#titular} aberta com sucesso! Seu saldo inicial é de R$${this.#saldo}!`)
+// }
 
-consultarSaldo(numero){
-    
-}
+// consultarSaldo(numero){
+//     nomeTitular += this.#titular
+//     saldoInicial += this.#saldo
+//     return console.log(`O saldo da conta de ${this.#titular} é de R$${this.#saldo}!`)
+// }
 
-}
+// transferir(contaOrigem, contaDestino, valor){
+//     if (valor > this.#saldo){
+//         return console.log(`Saldo insuficiente!`)
+//     } else{
+//         this.#saldo -= valor
+//         return console.log(`Transferência de R$${valor} realizada com sucesso!`)
+//     }
+// }}
+
+// let banco1 = new Banco(9, `Heloísa`, 1000)
+// console.log(banco1.abrirConta(`Heloísa`, 1000))
+// console.log(banco1.consultarSaldo(9))
+// console.log(banco1.transferir(9, 10, 500))
+
+
+// // Exercício 12
+// class Pedido{
+//     #nomeProduto
+//     #valor
+//     constructor(nomeProduto, valor){
+//         this.#nomeProduto = nomeProduto,
+//         this.#valor = valor
+// }
+
+// adicionarItem(nomeProduto, valor){
+//     nomeProduto = this.#nomeProduto
+//     valor = this.#valor
+// }
+// removerItem(nomeProduto, valor){
+//     nomeProduto = this.#nomeProduto
+//     valor = this.#valor
+// }
+// exibirPedido(){
+//     return this.#nomeProduto + this.#valor
+// }}
+
+// let pedido1 = new Pedido(`Banana`, 5)
+// pedido1.adicionarItem(`Maçã`, 10)
+// console.log(pedido1.exibirPedido())
+
+
+// // Exercício  13
+// class UsuarioSistema {
+//     #login
+//     #senha
+//     constructor(login, senha){
+//         this.#login = login,
+//         this.#senha = senha
+//     }
+
+// autenticar(login, senha){
+//     if (login == this.#login && senha == this.#senha){
+//         return console.log(`Seja bem-vindo a sua conta!`)
+//     } else {
+//         return console.log(`Login ou senha incorretos!`)
+//     }
+// }
+// alterarSenha(senhaAntiga, senhaNova){
+//     if (senhaAntiga == this.#senha){
+//         this.#senha = senhaNova
+//         return console.log(`Senha alterada!`)
+//     } else {
+//         return console.log (`Senha incorreta!`)
+// }}}
+// let usuario1 = new UsuarioSistema(`heloisa`, `12345`)
+// usuario1.autenticar(`heloisa`, `12345`)
+// usuario1.alterarSenha(`12345`, `23456`)
+
+
+// // Exercício 14
+// class Funcionario {
+//     constructor(nome, salarioBase) {
+//         this.nome = nome;
+//         this.salarioBase = salarioBase;
+//     }
+// }
+
+// class FuncionarioCLT extends Funcionario {
+//     calcularSalario() {
+//         let conta = this.salarioBase - (this.salarioBase * 10 / 100);
+//         let conta1 = conta + (conta * 5 / 100);
+//         return console.log (conta1);
+//     }
+// }
+
+// class FuncionarioPJ extends Funcionario {
+//     calcularSalario() {
+//         return console.log(this.salarioBase);
+//     }
+// }
+
+// class Estagiario extends Funcionario {
+//     calcularSalario() {
+//         return console.log(this.salarioBase - (this.salarioBase * 5 / 100));
+//     }
+// }
+
+// let funcionario1 = new FuncionarioCLT(`Heloísa`, 1000)
+// let funcionario2 = new FuncionarioPJ(`Heloísa`, 1000)
+// let funcionario3 = new Estagiario(`Heloísa`, 1000)
+
+
+// // Exercício 15
+// class Investimento {
+//     calcularRendimento(valor, meses){
+// }}
+
+// class RendaFixa extends Investimento {
+//     calcularRendimento(valor, meses){
+//         return console.log(valor + (valor * 0.007 * meses))
+// }}
+
+// class CDB extends Investimento {
+//     calcularRendimento(valor, meses, conta, conta1){
+//         conta = valor + (valor * 1 / 100 * meses)
+//         conta1 = conta - (conta * 15 / 100)
+//     }}
+
+// let investimento1 = new RendaFixa()
+// investimento1.calcularRendimento(1000, 5)
+
+// let investimento2 = new CDB()
+// investimento2.calcularRendimento(1000, 5)
+
+
+// Exercício 16
