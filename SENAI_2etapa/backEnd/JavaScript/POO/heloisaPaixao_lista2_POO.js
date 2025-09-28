@@ -94,19 +94,129 @@
 // Exercício 5 
 
 
-// Exxercício 6
+// // Exercício 6
+// class Produto{
+//     #nome
+//     #preco
+
+//     constructor(nome, preco){
+//         this.#nome = nome
+//         this.#preco = preco
+// }
+// get getNome(){ // PARA VISUALIZAR, SEM MODIFICAR
+//     return this.#nome
+// }
+
+// set setNome(novoNome){ // PARA MODIFICAR
+//     this.#nome = novoNome
+// }
+
+// get getPreco(){ // PARA VISUALIZAR, SEM MODIFICAR
+//     return this.#preco
+// }
+// set setPreco(novoPreco){ // PARA MODIFICAR
+//     this.#preco = novoPreco
+// }}
+
+// let produto1 = new Produto(`Camiseta`, 50)
+// console.log(produto1.getNome, produto1.getPreco)
+// produto1.setNome = `Calça`
+// produto1.setPreco = 120
+// console.log(produto1.getNome, produto1.getPreco)
 
 
-// Exercício 7
+// // Exercício 7
+// class Carro{
+//     #velocidade
+//     constructor(velocidade){
+//         this.#velocidade = velocidade
+// }
+
+// acelerar(){
+//     this.#velocidade += 10
+//     console.log(this.#velocidade)
+// }
+
+// frear(){
+//     this.#velocidade -= 10
+//     console.log(this.#velocidade)
+// }}
+
+// carro1 =  new Carro(0)
+// carro1.acelerar()
+// carro1.acelerar()
+// carro1.frear()
 
 
-// Exercício 8
+// // Exercício 8
+// class Conta{
+//     #saldo
+//     constructor(saldo){
+//     this.#saldo = saldo
+// }
+
+// depositar(valor){
+//     if (valor > 0){
+//         this.#saldo += valor
+//         console.log(this.#saldo)
+//     } else {
+//     console.log(`Valor inválido`)
+// }}
+
+// sacar(valor){
+//     if (valor > 0 && valor <= this.#saldo){
+//         this.#saldo -= valor
+//         console.log(this.#saldo)
+//     } else {
+//     console.log(`Saldo insuficiente`)
+// }}}
+
+// let conta1 = new Conta (1000)
+// conta1.depositar(50)
+// conta1.sacar(30)
 
 
-// Exercício 9
+// // Exercício 9
+// class Usuario {
+//     #senha
+//     constructor(senha){
+//         this.#senha = senha
+// }
+
+// validarSenha(senhaDigitada){
+//     if (senhaDigitada == this.#senha){
+//         return console.log(true)
+//     } else {
+//         return console.log(false)
+// }}}
+
+// let usuario1 = new Usuario (`1234`)
+// usuario1.validarSenha(`1234`)
+
+// let usuario2 = new Usuario (`1234`)
+// usuario2.validarSenha(`2345`)
 
 
-// Exercício 10
+// // Exercício 10
+// class Retangulo{
+//     #altura
+//     #largura
+//     constructor(altura, largura){
+//         this.#altura = altura
+//         this.#largura = largura
+// }
+
+// getArea() {
+//     return this.#altura * this.#largura;
+// }
+
+// getPerimetro(){
+//     return (this.#altura * 2) + (this.#largura * 2)
+// }}
+
+// let retangulo1 =  new Retangulo (5, 10)
+// console.log(retangulo1.getArea())
+// console.log(retangulo1.getPerimetro())
 
 
 // // Exercício 11
@@ -227,6 +337,7 @@
 
 // let aviao1 = new Aviao()
 // aviao1.mover()
+
 
 // // Exercício 15
 // class Mensagem{
