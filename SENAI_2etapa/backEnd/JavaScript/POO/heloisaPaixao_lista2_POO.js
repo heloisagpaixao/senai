@@ -61,28 +61,113 @@
 // console.log(`O veículo da marca ${veiculo2.marca}, do ano de ${veiculo2.ano}, possui ${veiculo2.portas} portas.`)
 
 
-// Exercício 4
-class Funcionario {
-    constructor (salarioBase){
-        this.salarioBase = salarioBase
-}
-    calcularSalario(){
-        return this.salarioBase
-}}
+// // Exercício 4
+// class Funcionario {
+//     constructor (salarioBase){
+//         this.salarioBase = salarioBase
+// }
+//     calcularSalario(){
+//         return this.salarioBase
+// }}
 
-class Gerente extends Funcionario {
-    constructor(salarioBase){
-    super(salarioBase)}
-    calcularSalario(){
-        return this.salarioBase += (this.salarioBase * 30 / 100)
-}}
+// class Gerente extends Funcionario {
+//     constructor(salarioBase){
+//     super(salarioBase)}
+//     calcularSalario(){
+//         return this.salarioBase += (this.salarioBase * 30 / 100)
+// }}
 
-class Desenvolvedor extends Funcionario {
-    constructor(salarioBase){
-        super(salarioBase)}
-        calcularSalario(){
-            return this.salarioBase += (this.salarioBase * 20 / 100)
-}}
+// class Desenvolvedor extends Funcionario {
+//     constructor(salarioBase){
+//         super(salarioBase)}
+//         calcularSalario(){
+//             return this.salarioBase += (this.salarioBase * 20 / 100)
+// }}
 
-let desenvolvedor1 = new Desenvolvedor (1000)
-console.log(`O salário do desenvolvedor é de R$ ${desenvolvedor1.calcularSalario()}!`)
+// let desenvolvedor1 = new Desenvolvedor (1000)
+// console.log(`O salário do desenvolvedor é de R$ ${desenvolvedor1.calcularSalario()}!`)
+
+// let gerente1 = new Gerente (1000)
+// console.log(`O salário do gerente é de R4 ${gerente1.calcularSalario()}!`)
+
+
+// Exercício 5 
+
+
+// Exxercício 6
+
+
+// Exercício 7
+
+
+// Exercício 8
+
+
+// Exercício 9
+
+
+// Exercício 10
+
+
+// // Exercício 11
+// class Forma {
+//     calcularArea(){
+//         return 0
+// }}
+
+// class Quadrado extends Forma {
+//     calcularArea(lado){
+//         return console.log (lado * lado)
+// }}
+
+// class Retangulo extends Forma {
+//     calcularArea(largura, altura){
+//         return console.log (largura * altura)
+// }}
+
+// class Circulo extends Forma {
+//     calcularArea(raio){
+//         return console.log (3.14 * (raio * raio))
+// }}
+
+// let quadrado1 = new Quadrado()
+// quadrado1.calcularArea(4)
+
+// let retangulo1 = new Retangulo()
+// retangulo1.calcularArea(4, 6)
+
+// let circulo1 = new Circulo()
+// circulo1.calcularArea(5)
+
+
+// // Exercício 12
+// class Funcionario {
+//     trabalhar(){
+// }}
+
+// class Professor extends Funcionario{
+//     trabalhar(){
+//         console.log(`Ministrando aulas e corrigindo provas.`)
+// }}
+
+// class Engenheiro extends Funcionario{
+//     trabalhar(){
+//         console.log(`Desenvolvendo projetos e supervisionando obras.`)
+// }}
+
+// class Designer extends Funcionario{
+//     trabalhar(){
+//         console.log(`Criando layouts e materiais gráficos.`)
+// }}
+
+// let professor1 =  new Professor();
+// professor1.trabalhar();
+
+// let engenheiro1 = new Engenheiro();
+// engenheiro1.trabalhar();   
+
+// let designer1 = new Designer();
+// designer1.trabalhar();
+
+
+// Exercício 13
