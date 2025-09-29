@@ -1,5 +1,7 @@
 // EXERCÍCIO 1
-
+function verificarEstoque(produto, quantidade, callback){
+    
+}
 
 
 // // EXERCÍCIO 2: Classe Simples - Produto
@@ -96,7 +98,7 @@
 
 
 
-// // [REVISAR] EXERCÍCIO 5: Herança + Polimorfismo – Funcionários da Logística
+// // EXERCÍCIO 5: Herança + Polimorfismo – Funcionários da Logística
 // class Funcionario {
 //     constructor(nome, salarioBase){
 //         this.nome = nome
@@ -112,7 +114,7 @@
 //     }
 
 //     calcularSalario(){
-//     return console.log(`O funcionário ${this.nome} recebe R$ ${this.salarioBase + (this.salarioBase * 10 / 100)}.`)
+//     return (this.salarioBase * 10 / 100)
 //     }
 // }
 
@@ -121,14 +123,48 @@
 //         super(nome, salarioBase);
 //     }
 //     calcularSalario(){
-//         return console.log (`O funcionário ${this.nome} recebe R$ ${this.salarioBase + 2000}.`)
+//         return this.salarioBase + 2000
 //     }
 // }
 
-// let operador1 = new OperadorDeEmpilhadeira(`Lucas`, 1000)
-// operador1.calcularSalario()
+// let operador1 = new OperadorDeEmpilhadeira(`Lucas`, 10000)
+// let operador2 = new OperadorDeEmpilhadeira(`Celso`, 10000)
+// let gerente1 = new GerenteDeLogistica(`Gabriel`, 10000)
+// let gerente2 = new GerenteDeLogistica(`Daniel`, 10000)
+// let gerente3 = new GerenteDeLogistica(`Pedro`, 10000)
 
-// let gerente1 = new GerenteDeLogistica(`Gabriel`, 1000)
-// gerente1.calcularSalario()
+// lista = [operador1.calcularSalario(), operador2.calcularSalario(), gerente1.calcularSalario(), gerente2.calcularSalario(), gerente3.calcularSalario()]
+// console.log(lista)
 
 
+// // EXERCÍCIO 6: Encapsulamento – Controle de Almoxarifado
+// class Almoxarifado{
+//     #quantidade
+//     constructor(quantidade, nome){
+//         this.#quantidade = quantidade
+//         this.nome = nome
+//     }
+
+//     set adicionarProduto(qtd){
+//         if (qtd <= 0){
+//             console.log(`Você não pode adicionar ${qtd} produtos no almoxarifado.`)
+//         } else {
+//             return qtd + this.#quantidade
+//         }
+//     }
+
+//     set retirarProduto(qtd){
+//         if (qtd > this.#quantidade){
+//             console.log(`Você não pode retirar mais do que existe.`)
+//         } else {
+//             return this.#quantidade - qtd
+//         }
+//     }
+
+//     get consultarEstoque(){
+//         return console.log (`Existem ${this.#quantidade} de ${this.nome} no almoxarifado.`)
+//     }
+// }
+
+// let almoxarifado1 = new Almoxarifado(50, `maçãs`)
+// almoxarifado1.adicionarProduto(10)
