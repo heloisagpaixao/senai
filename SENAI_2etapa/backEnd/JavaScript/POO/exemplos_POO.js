@@ -96,34 +96,34 @@
 // cachorro.fazerSom();
 
 
-// class Animal {
-//     fazerSom(){
-// 	console.log(`Emite um som genérico`)
-//     } nome 
-// constructor(nome){
-//     this.nome = nome
-// }}
-
-// class Cachorro extends Animal {
-//     fazerSom(){
-// 		console.log(`Auau`)
-// 	} constructor(nome){
-//         super(nome)
-// }}
-
-// let cachorro = new Cachorro(`Rex`);
-// cachorro.fazerSom();
-// console.log(`Nome do cachorro: ${cachorro.nome}.`)
-
-
-class Calculadora {
-    soma(a,b,c){
-        if (c !== undefined) {
-            return a + b + c
-        }
-        return a + b
+class Animal {
+    fazerSom(){
+	console.log(`Emite um som genérico`)
+    } nome 
+constructor(nome){
+    this.nome = nome
 }}
 
-let calc = new Calculadora()
-console.log(calc.soma(2, 3))
-console.log(calc.soma(2, 3, 4))
+class Cachorro extends Animal {
+    fazerSom(){
+		console.log(`Auau`)
+	} constructor(nome){
+        super(nome)
+}}
+
+let cachorro = new Cachorro(`Rex`);
+cachorro.fazerSom();
+console.log(`Nome do cachorro: ${cachorro.nome}.`)
+
+
+// class Calculadora {
+//     soma(a,b,c){
+//         if (c !== undefined) {
+//             return a + b + c
+//         }
+//         return a + b
+// }}
+
+// let calc = new Calculadora()
+// console.log(calc.soma(2, 3))
+// console.log(calc.soma(2, 3, 4))

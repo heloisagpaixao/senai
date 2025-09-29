@@ -1,4 +1,25 @@
-// Exerício 1
+// Exerício 3
+function filtrarLista(lista, callback){
+    lista.forEach(i => {
+        if (callback(i)){
+            console.log(i)
+        }
+    });
+}
+
+function primo(numero){
+    if (numero < 2){
+        return false
+    }
+    for (let i = 2; i < numero; i++){
+        if (numero % i == 0){
+            return false
+        }
+    }
+    return true 
+}
+
+filtrarLista([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], primo)
 
 
 // // Exercício 5
@@ -33,7 +54,8 @@
 
 
 // // Exercício 7
-// class Aluno {
+// class Alu
+// no {
 //     constructor(nota1, nota2, nota3){
 //         this.nota1 = nota1,
 //         this.nota2 = nota2,
@@ -258,7 +280,7 @@
 // let funcionario3 = new Estagiario(`Heloísa`, 1000)
 
 
-// // Exercício 15 - NAO FINLIZADO
+// // Exercício 15 - NAO FINALIZADO
 // class Investimento {
 //     calcularRendimento(valor, meses){
 // }}
