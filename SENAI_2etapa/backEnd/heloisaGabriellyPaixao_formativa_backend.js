@@ -1,23 +1,23 @@
-// EXERCÍCIO 1: Função com Callback – Conferência de Estoque
-// "Banco de dados" de estoque
-          const estoque = {
-            caixa: 50,
-            palete: 10,
-            empilhadeira: 2
-          };
+// // EXERCÍCIO 1: Função com Callback – Conferência de Estoque
+// // "Banco de dados" de estoque
+//           const estoque = {
+//             caixa: 50,
+//             palete: 10,
+//             empilhadeira: 2
+//           };
 
-function verificarEstoque(produto, quantidade, callback){
-    produto = estoque
-    quantidade = 10
-    callback(estoque)
+// function verificarEstoque(produto, quantidade, callback){
+//     return callback(produto, quantidade, estoque)
+// }
 
-    if (quantidade < estoque[caixa]){
-        quantidade = estoque[caixa] - quantidade
-        return console.log (`Pedido aprovado.`)
-    } else {
-        console.log(`Estoque insuficiente`)
-    }
-}
+// function validacaoEstoque (produto, quantidade){
+//     if (quantidade < estoque[produto]){
+//         return console.log (`Estoque suficiente, o pedido foi aprovado.`)
+//     } else {
+//         console.log(`Estoque insuficiente, o pedido não foi aprovado.`)
+//     }
+// }
+// validacaoEstoque(`caixa`, 10)
 
 
 
