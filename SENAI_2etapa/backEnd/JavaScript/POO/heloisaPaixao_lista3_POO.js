@@ -148,33 +148,33 @@
 // console.log(biblioteca1.listarLivros())
 
 
-// Exercício 10
-class Cofrinho{
-    #valorNotas
-    #valorMoedas
+// // Exercício 10
+// class Cofrinho{
+//     #valorNotas
+//     #valorMoedas
 
-constructor(valorNotas, valorMoedas){
-    this.#valorNotas = valorNotas
-    this.#valorMoedas = valorMoedas
-}
+// constructor(valorNotas, valorMoedas){
+//     this.#valorNotas = valorNotas
+//     this.#valorMoedas = valorMoedas
+// }
 
-depositar(valorNotas, valorMoedas){
-    this.#valorNotas += valorNotas
-    this.#valorMoedas += valorMoedas
-}
+// depositar(valorNotas, valorMoedas){
+//     this.#valorNotas += valorNotas
+//     this.#valorMoedas += valorMoedas
+// }
 
-retirar(valorNotas, valorMoedas){
-    this.#valorNotas -= valorNotas
-    this.#valorMoedas -= valorMoedas
-}
+// retirar(valorNotas, valorMoedas){
+//     this.#valorNotas -= valorNotas
+//     this.#valorMoedas -= valorMoedas
+// }
 
-exibirSaldo(){
-    return this.#valorNotas + this.#valorMoedas
-}}
+// exibirSaldo(){
+//     return this.#valorNotas + this.#valorMoedas
+// }}
 
-let cofrinho1 = new Cofrinho (100, 50)
-cofrinho1.depositar(100, 50)
-console.log(`Você possui R$ ${cofrinho1.exibirSaldo()} em seu cofrinho!!`)
+// let cofrinho1 = new Cofrinho (100, 50)
+// cofrinho1.depositar(100, 50)
+// console.log(`Você possui R$ ${cofrinho1.exibirSaldo()} em seu cofrinho!!`)
 
 
 // // Exercício 11
