@@ -1,7 +1,21 @@
-// EXERCÍCIO 1
+// EXERCÍCIO 1: Função com Callback – Conferência de Estoque
+// "Banco de dados" de estoque
+          const estoque = {
+            caixa: 50,
+            palete: 10,
+            empilhadeira: 2
+          };
+
 function verificarEstoque(produto, quantidade, callback){
-    
+    produto = caixa
+    quantidade = 10
+    if (quantidade < estoque[caixa] ){
+        console.log (`Pedido aprovado.`)
+    } else {
+        console.log(`Estoque insuficiente`)
+    }
 }
+
 
 
 // // EXERCÍCIO 2: Classe Simples - Produto
@@ -137,6 +151,7 @@ function verificarEstoque(produto, quantidade, callback){
 // console.log(lista)
 
 
+
 // // EXERCÍCIO 6: Encapsulamento – Controle de Almoxarifado
 // class Almoxarifado{
 //     #quantidade
@@ -145,26 +160,28 @@ function verificarEstoque(produto, quantidade, callback){
 //         this.nome = nome
 //     }
 
-//     set adicionarProduto(qtd){
-//         if (qtd <= 0){
-//             console.log(`Você não pode adicionar ${qtd} produtos no almoxarifado.`)
+//     adicionarProduto(qtd){
+//         if (qtd > 0){
+//             return console.log(`Existem ${this.#quantidade = this.#quantidade + qtd} ${this.nome} no almoxarifado.`)
 //         } else {
-//             return qtd + this.#quantidade
+//             console.log(`Você não pode adicionar ${qtd} produtos no almoxarifado.`)  
 //         }
 //     }
 
-//     set retirarProduto(qtd){
-//         if (qtd > this.#quantidade){
-//             console.log(`Você não pode retirar mais do que existe.`)
+//     retirarProduto(qtd){
+//         if (qtd < this.#quantidade && qtd > 0){
+//             return console.log(`Existem ${this.#quantidade = this.#quantidade - qtd} no almoxarifado.`)
 //         } else {
-//             return this.#quantidade - qtd
+//             console.log(`Você não pode retirar mais ou menos do que existe.`)  
 //         }
 //     }
 
-//     get consultarEstoque(){
-//         return console.log (`Existem ${this.#quantidade} de ${this.nome} no almoxarifado.`)
+//     consultarEstoque(){
+//         return console.log (`Existem ${this.#quantidade} ${this.nome} no almoxarifado.`)
 //     }
 // }
 
 // let almoxarifado1 = new Almoxarifado(50, `maçãs`)
+// almoxarifado1.consultarEstoque()
 // almoxarifado1.adicionarProduto(10)
+// almoxarifado1.retirarProduto(2)
