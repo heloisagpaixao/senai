@@ -65,14 +65,14 @@
 // executarCallback(() => {console.log(`Seja bem-vindo, usuário!`)})
 
 // Exercício 10
-//  let lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-//  let dobro = (lista) => {console.log (lista*2)}
-//  function executarCallback(lista, callback){
-//      callback(lista)
-// }
-// for(let i = 0; i < lista.length; i++){
-//     executarCallback(lista[i], dobro)
-// }
+ let lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ let dobro = (lista) => {console.log (lista*2)}
+ function executarCallback(lista, callback){
+     callback(lista)
+}
+for(let i = 0; i < lista.length; i++){
+    executarCallback(lista[i], dobro)
+}
 
 // Exercício 11
 // function decrescente(n){

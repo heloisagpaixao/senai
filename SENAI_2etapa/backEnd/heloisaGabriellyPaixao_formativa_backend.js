@@ -7,10 +7,13 @@
           };
 
 function verificarEstoque(produto, quantidade, callback){
-    produto = caixa
+    produto = estoque
     quantidade = 10
-    if (quantidade < estoque[caixa] ){
-        console.log (`Pedido aprovado.`)
+    callback(estoque)
+
+    if (quantidade < estoque[caixa]){
+        quantidade = estoque[caixa] - quantidade
+        return console.log (`Pedido aprovado.`)
     } else {
         console.log(`Estoque insuficiente`)
     }
