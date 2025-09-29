@@ -1,25 +1,47 @@
 // Exerício 3
-function filtrarLista(lista, callback){
-    lista.forEach(i => {
-        if (callback(i)){
-            console.log(i)
-        }
-    });
-}
+// function filtrarLista(lista, callback){
+//     lista.forEach(i => {
+//         if (callback(i)){
+//             console.log(i)
+//         }
+//     });
+// }
 
-function primo(numero){
-    if (numero < 2){
-        return false
-    }
-    for (let i = 2; i < numero; i++){
-        if (numero % i == 0){
-            return false
-        }
-    }
-    return true 
-}
+// function primo(numero){
+//     if (numero < 2){
+//         return false
+//     }
+//     for (let i = 2; i < numero; i++){
+//         if (numero % i == 0){
+//             return false
+//         }
+//     }
+//     return true 
+// }
 
-filtrarLista([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], primo)
+// filtrarLista([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], primo)
+
+// function filtrarLista(lista, callback){
+//     for (let i = 0; i < lista.length; i++){ // PERCORRER O ARRAY
+//         if (callback(lista[i])){
+//             console.log(lista[i])
+//         }
+//     }
+// }
+
+// function primo(numero){
+//     if (numero < 2){
+//         return false
+//     }
+//     for (let i = 2; i < numero; i++){
+//         if (numero % i == 0){
+//             return false
+//         }
+//     }
+//     return true 
+// }
+
+// filtrarLista([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], primo)
 
 
 // // Exercício 5
@@ -126,33 +148,33 @@ filtrarLista([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], primo)
 // console.log(biblioteca1.listarLivros())
 
 
-// // Exercício 10
-// class Cofrinho{
-//     #valorNotas
-//     #valorMoedas
+// Exercício 10
+class Cofrinho{
+    #valorNotas
+    #valorMoedas
 
-// constructor(valorNotas, valorMoedas){
-//     this.#valorNotas = valorNotas
-//     this.#valorMoedas = valorMoedas
-// }
+constructor(valorNotas, valorMoedas){
+    this.#valorNotas = valorNotas
+    this.#valorMoedas = valorMoedas
+}
 
-// depositar(valorNotas, valorMoedas){
-//     this.#valorNotas += valorNotas
-//     this.#valorMoedas += valorMoedas
-// }
+depositar(valorNotas, valorMoedas){
+    this.#valorNotas += valorNotas
+    this.#valorMoedas += valorMoedas
+}
 
-// retirar(valorNotas, valorMoedas){
-//     this.#valorNotas -= valorNotas
-//     this.valorMoedas -= valorMoedas
-// }
+retirar(valorNotas, valorMoedas){
+    this.#valorNotas -= valorNotas
+    this.#valorMoedas -= valorMoedas
+}
 
-// exibirSaldo(){
-//     return this.#valorNotas + this.#valorMoedas
-// }}
+exibirSaldo(){
+    return this.#valorNotas + this.#valorMoedas
+}}
 
-// let cofrinho1 = new Cofrinho (100, 50)
-// cofrinho1.depositar(100, 50)
-// console.log(`Você possui R$ ${cofrinho1.exibirSaldo()} em seu cofrinho!!`)
+let cofrinho1 = new Cofrinho (100, 50)
+cofrinho1.depositar(100, 50)
+console.log(`Você possui R$ ${cofrinho1.exibirSaldo()} em seu cofrinho!!`)
 
 
 // // Exercício 11
