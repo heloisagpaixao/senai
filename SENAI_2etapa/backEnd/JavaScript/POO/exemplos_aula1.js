@@ -70,3 +70,19 @@
 // let conta1 =  new Conta(`Celso`, 0)
 // conta1.depositar(2000)
 // conta1.sacar(510)
+
+
+// 1. A função de callback
+function exibirResultado(resultado) {
+  console.log('O resultado da operação é: ' + resultado);
+}
+
+// 2. A função principal que recebe o callback
+function calcularESomar(num1, num2, callback) {
+  const soma = num1 + num2;
+  // 3. Chama o callback, passando o resultado
+  callback(soma);
+}
+
+// Chamando a função principal e passando o callback
+calcularESomar(5, 3, exibirResultado); // Saída: O resultado da operação é: 8
