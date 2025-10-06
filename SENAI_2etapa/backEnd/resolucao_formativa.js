@@ -1,28 +1,28 @@
-// // EXERCÍCIO 1: Função com Callback – Conferência de Estoque
-// // "Banco de dados" de estoque
-//           const estoque = {
-//             caixa: 50,
-//             palete: 10,
-//             empilhadeira: 2
-//           };
+// EXERCÍCIO 1: Função com Callback – Conferência de Estoque
+// "Banco de dados" de estoque
+          const estoque = {
+            caixa: 50,
+            palete: 10,
+            empilhadeira: 2
+          };
 
-// // função principal
-// function verificarEstoque(produto, quantidade, callback){
-//     return callback(produto, quantidade, estoque)
-// }
+// função principal
+function verificarEstoque(produto, quantidade, callback){
+    return callback(produto, quantidade, estoque)
+}
 
-// // callback de conferência
-// function validacaoEstoque (produto, quantidade){
-//     if (quantidade <= estoque[produto]){
-//         return console.log (`Estoque suficiente, o pedido foi aprovado.`)
-//     } else {
-//         console.log(`Estoque insuficiente, o pedido não foi aprovado.`)
-//     }
-// }
+// callback de conferência
+function validacaoEstoque (produto, quantidade){
+    if (quantidade <= estoque[produto]){
+        return console.log (`Estoque suficiente, o pedido foi aprovado.`)
+    } else {
+        console.log(`Estoque insuficiente, o pedido não foi aprovado.`)
+    }
+}
 
-// verificarEstoque(`caixa`, 2, validacaoEstoque); // Pedido suficiente
-// verificarEstoque(`palete`, 15, validacaoEstoque); // Pedido insuficiente
-// verificarEstoque(`empilhadeira`, 1, validacaoEstoque); // Pedido suficiente
+verificarEstoque(`caixa`, 2, validacaoEstoque); // Pedido suficiente
+verificarEstoque(`palete`, 15, validacaoEstoque); // Pedido insuficiente
+verificarEstoque(`empilhadeira`, 1, validacaoEstoque); // Pedido suficiente
 
 
 
@@ -168,36 +168,36 @@
 
 
 
-// EXERCÍCIO 6: Encapsulamento – Controle de Almoxarifado
-class Almoxarifado{
-    #quantidade
-    constructor(quantidade, nome){
-        this.#quantidade = quantidade
-        this.nome = nome
-    }
+// // EXERCÍCIO 6: Encapsulamento – Controle de Almoxarifado
+// class Almoxarifado{
+//     #quantidade
+//     constructor(quantidade, nome){
+//         this.#quantidade = quantidade
+//         this.nome = nome
+//     }
 
-    adicionarProduto(qtd){ // SET = alterar informação privada
-        if (qtd > 0){
-            return console.log(`Existem ${this.#quantidade = this.#quantidade + qtd} ${this.nome} no almoxarifado.`)
-        } else {
-            console.log(`Você não pode adicionar ${qtd} produtos no almoxarifado.`)  
-        }
-    }
+//     adicionarProduto(qtd){ // SET = alterar informação privada
+//         if (qtd > 0){
+//             return console.log(`Existem ${this.#quantidade = this.#quantidade + qtd} ${this.nome} no almoxarifado.`)
+//         } else {
+//             console.log(`Você não pode adicionar ${qtd} produtos no almoxarifado.`)  
+//         }
+//     }
 
-    retirarProduto(qtd){ // SET = alterar informação privada
-        if (qtd < this.#quantidade && qtd > 0){
-            return console.log(`Existem ${this.#quantidade = this.#quantidade - qtd} no almoxarifado.`)
-        } else {
-            console.log(`Você não pode retirar mais ou menos do que existe.`)  
-        }
-    }
+//     retirarProduto(qtd){ // SET = alterar informação privada
+//         if (qtd < this.#quantidade && qtd > 0){
+//             return console.log(`Existem ${this.#quantidade = this.#quantidade - qtd} no almoxarifado.`)
+//         } else {
+//             console.log(`Você não pode retirar mais ou menos do que existe.`)  
+//         }
+//     }
 
-    consultarEstoque(){ // GET = exibir informação privada
-        return console.log (`Existem ${this.#quantidade} ${this.nome} no almoxarifado.`)
-    }
-}
+//     consultarEstoque(){ // GET = exibir informação privada
+//         return console.log (`Existem ${this.#quantidade} ${this.nome} no almoxarifado.`)
+//     }
+// }
 
-let almoxarifado1 = new Almoxarifado(50, `maçãs`)
-almoxarifado1.consultarEstoque()
-almoxarifado1.adicionarProduto(10)
-almoxarifado1.retirarProduto(2)
+// let almoxarifado1 = new Almoxarifado(50, `maçãs`)
+// almoxarifado1.consultarEstoque()
+// almoxarifado1.adicionarProduto(10)
+// almoxarifado1.retirarProduto(2)
