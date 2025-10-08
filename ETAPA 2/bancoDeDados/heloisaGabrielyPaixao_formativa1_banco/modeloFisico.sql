@@ -43,3 +43,9 @@ CREATE TABLE tbl_matriculas (
 	id_aluno INT,
 	id_curso INT
 );
+
+
+CREATE USER 'professor'@'localhost' IDENTIFIED BY 'Escola@Prof2';
+GRANT SELECT ON db_escola_b.tbl_alunos TO 'professor'@'localhost';
+REVOKE SELECT, UPDATE ON db_escola_b.tbl_alunos FROM 'professor'@'localhost';
+ALTER TABLE tbl_alunos MODIFY COLUMN título VARCHAR(150);
