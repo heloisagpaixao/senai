@@ -17,7 +17,10 @@ CREATE TABLE tbl_autores (
 CREATE TABLE tbl_livrosAutores (
 	id_livrosAutores INT PRIMARY KEY,
 	ISBN INT NOT NULL,
-	id_autor INT NOT NULL
+	id_autor INT NOT NULL,
+
+CONSTRAINT FK_id_autor FOREIGN KEY (id_autor) REFERENCES tbl_autores(id_autor),
+CONSTRAINT FK_isbn FOREIGN KEY (ISBN) REFERENCES tbl_livros(ISBN)
 );
 
 CREATE TABLE tbl_exemplares (
@@ -38,8 +41,13 @@ CREATE TABLE tbl_emprestimos (
 	dt_emprestimo DATE NOT NULL,
 	dt_prevista_devolucao DATE NOT NULL,
     dt_devolucao DATE NOT NULL,
-    id_exemplar INT NOT NULL
+    id_exemplar INT NOT NULL,
+    
+    CONSTRAINT fk_matricula FOREIGN KEY (matricula) REFERENCES tbl_membros(matricula),
+    CONSTRAINT fk_id_exemplar FOREIGN KEY (id_exemplar) REFERENCES tbl_exemplares(id_exemplar)
 );
 
 CREATE USER 'estagiario'@'localhost' IDENTIFIED BY 'mudar123';
 GRANT ALTER ON db_bibliosomativa_b.tbl_livros TO 'estagiario'@'localhost';
+
+DROP DATABASE db_bibliosomativa_b;
