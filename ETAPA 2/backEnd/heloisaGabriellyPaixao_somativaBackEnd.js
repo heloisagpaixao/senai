@@ -1,28 +1,28 @@
-// Exercício 1: Função com Callback – Verificação de Candidatos
-// "Banco de dados" simulado:
-const candidatos = {
-    ana: true,
-    bruno: false,
-    carla: true,
-    daniel: false
-};
+// // Exercício 1: Função com Callback – Verificação de Candidatos
+// // "Banco de dados" simulado:
+// const candidatos = {
+//     ana: true,
+//     bruno: false,
+//     carla: true,
+//     daniel: false
+// };
 
-function verificarCandidato(nome, callback){
-    return callback(nome, candidatos)
-}
+// function verificarCandidato(nome, callback){
+//     return callback(nome, candidatos)
+// }
 
-function aprovacaoCandidato(nome, candidatos){
-    if (candidatos[nome] != true){
-        return console.log(`Candidato reprovado.`)
-    } else {
-        return console.log(`Candidato aprovado para a próxima fase!`)
-    }
-}
+// function aprovacaoCandidato(nome, candidatos){
+//     if (candidatos[nome] != true){
+//         return console.log(`Candidato reprovado.`)
+//     } else {
+//         return console.log(`Candidato aprovado para a próxima fase!`)
+//     }
+// }
 
-verificarCandidato(`ana`, aprovacaoCandidato);
-verificarCandidato(`bruno`, aprovacaoCandidato);
-verificarCandidato(`carla`, aprovacaoCandidato);
-verificarCandidato(`daniel`, aprovacaoCandidato);
+// verificarCandidato(`ana`, aprovacaoCandidato);
+// verificarCandidato(`bruno`, aprovacaoCandidato);
+// verificarCandidato(`carla`, aprovacaoCandidato);
+// verificarCandidato(`daniel`, aprovacaoCandidato);
 
 
 
