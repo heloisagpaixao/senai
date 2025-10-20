@@ -60,6 +60,10 @@ CREATE TABLE tbl_emprestimo(
         REFERENCES tbl_membro(id_membro)
 );
 
+INSERT INTO tbl_emprestimo (data_emprestimo, data_devolucao, data_devolucao_efetiva)
+VALUES ('12/09/2025', '19/09/2025', '15/09/2025');
+SELECT * FROM tbl_emprestimo;
+
 CREATE TABLE tbl_membro(
     id_membro INTEGER PRIMARY KEY,
     nome_membro VARCHAR(200) NOT NULL,
@@ -69,7 +73,6 @@ CREATE TABLE tbl_membro(
 
 INSERT INTO tbl_membro(nome_membro, endereco, telefone)
 VALUES ('Heloísa Gabrielly Paixão', 'Sergio Zani, 30, Bela Vista', '11 95628-0221');
-
 SELECT * FROM tbl_membro;
 
 CREATE USER 'estagiario'@'localhost' IDENTIFIED BY 'Mudar123';

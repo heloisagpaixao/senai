@@ -1,28 +1,28 @@
-// // Exercício 1: Função com Callback – Verificação de Candidatos
-// // "Banco de dados" simulado:
-// const candidatos = {
-//     ana: true,
-//     bruno: false,
-//     carla: true,
-//     daniel: false
-// };
+// Exercício 1: Função com Callback – Verificação de Candidatos
+// "Banco de dados" simulado:
+const candidatos = {
+    ana: true,
+    bruno: false,
+    carla: true,
+    daniel: false
+};
 
-// function verificarCandidato(nome, callback){
-//     return callback(nome, candidatos)
-// }
+function verificarCandidato(nome, callback){
+    return callback(nome, candidatos)
+}
 
-// function aprovacaoCandidato(nome, candidatos){
-//     if (candidatos[nome] != true){
-//         return console.log(`Candidato reprovado.`)
-//     } else {
-//         return console.log(`Candidato aprovado para a próxima fase!`)
-//     }
-// }
+function aprovacaoCandidato(nome, candidatos){
+    if (candidatos[nome] != true){
+        return console.log(`Candidato reprovado.`)
+    } else {
+        return console.log(`Candidato aprovado para a próxima fase!`)
+    }
+}
 
-// verificarCandidato(`ana`, aprovacaoCandidato);
-// verificarCandidato(`bruno`, aprovacaoCandidato);
-// verificarCandidato(`carla`, aprovacaoCandidato);
-// verificarCandidato(`daniel`, aprovacaoCandidato);
+verificarCandidato(`ana`, aprovacaoCandidato);
+verificarCandidato(`bruno`, aprovacaoCandidato);
+verificarCandidato(`carla`, aprovacaoCandidato);
+verificarCandidato(`daniel`, aprovacaoCandidato);
 
 
 
@@ -133,55 +133,55 @@
 
 
 
-// Exercício 5: Herança + Polimorfismo – Cargos e Bonificações
-class Funcionario {
-    constructor(nome, salarioBase) {
-        this.nome = nome,
-            this.salarioBase = salarioBase
-    }
-    calcularSalario() {
-        return this.salarioBase
-    }
-}
+// // Exercício 5: Herança + Polimorfismo – Cargos e Bonificações
+// class Funcionario {
+//     constructor(nome, salarioBase) {
+//         this.nome = nome,
+//             this.salarioBase = salarioBase
+//     }
+//     calcularSalario() {
+//         return this.salarioBase
+//     }
+// }
 
-class AssistenteRH extends Funcionario {
-    constructor(nome, salarioBase) {
-        super(nome, salarioBase)
-    }
-    calcularSalario() {
-        return this.salarioBase = this.salarioBase + (this.salarioBase * 5 / 100)
-    }
-}
+// class AssistenteRH extends Funcionario {
+//     constructor(nome, salarioBase) {
+//         super(nome, salarioBase)
+//     }
+//     calcularSalario() {
+//         return this.salarioBase = this.salarioBase + (this.salarioBase * 5 / 100)
+//     }
+// }
 
-class AnalistaRH extends Funcionario {
-    constructor(nome, salarioBase) {
-        super(nome, salarioBase)
-    }
-    calcularSalario() {
-        return this.salarioBase = this.salarioBase + (this.salarioBase * 15 / 100)
-    }
-}
+// class AnalistaRH extends Funcionario {
+//     constructor(nome, salarioBase) {
+//         super(nome, salarioBase)
+//     }
+//     calcularSalario() {
+//         return this.salarioBase = this.salarioBase + (this.salarioBase * 15 / 100)
+//     }
+// }
 
-class GerenteRH extends Funcionario {
-    constructor(nome, salarioBase) {
-        super(nome, salarioBase)
-    }
-    calcularSalario() {
-        return this.salarioBase = this.salarioBase + 3000
-    }
-}
+// class GerenteRH extends Funcionario {
+//     constructor(nome, salarioBase) {
+//         super(nome, salarioBase)
+//     }
+//     calcularSalario() {
+//         return this.salarioBase = this.salarioBase + 3000
+//     }
+// }
 
-const listafunc = [
-    new AssistenteRH(`Octávio`, 3000),
-    new AssistenteRH(`Vinicius`, 4000),
-    new AnalistaRH (`Stella`, 4500),
-    new AnalistaRH(`Lorena`, 4000),
-    new GerenteRH(`Tiago`, 6000)
-];
+// const listafunc = [
+//     new AssistenteRH(`Octávio`, 3000),
+//     new AssistenteRH(`Vinicius`, 4000),
+//     new AnalistaRH (`Stella`, 4500),
+//     new AnalistaRH(`Lorena`, 4000),
+//     new GerenteRH(`Tiago`, 6000)
+// ];
 
-listafunc.forEach(f => {
-    console.log(`${f.nome} - salário: R$ ${f.calcularSalario().toFixed(2)}`);
-})
+// listafunc.forEach(f => {
+//     console.log(`${f.nome} - salário: R$ ${f.calcularSalario().toFixed(2)}`);
+// })
 
 
 
