@@ -1,17 +1,20 @@
 CREATE DATABASE db_saber_e_cia_b;
-
 USE db_saber_e_cia_b;
 
 CREATE TABLE tbl_livro(
-    isbn VARCHAR(16) PRIMARY KEY,
+    isbn VARCHAR(20) PRIMARY KEY,
     titulo_livro VARCHAR(200) NOT NULL,
     ano_publicacao YEAR NOT NULL,
     editora VARCHAR(200) NOT NULL
 );
 
 INSERT INTO tbl_livro(isbn, titulo_livro, ano_publicacao, editora)
-    VALUES ('123456789','Java - Como programar.', '2000', 'SENAI'),
-           ('987654321','Java - Como programar 2', '2010', 'SENAI');
+    VALUES ('01938T32781904','Java - Como programar.', '2000', 'SENAI'),
+           ('987654321','Java - Como programar 2', '2010', 'SENAI'),
+           ('978-85-325-3078-3', 'Harry Potter e a Pedra Filosofal', 1997, 'Rocco'),
+           ('978-85-7126-061-0', 'Dom Casmurro', 1899, 'Editora Clássica');
+
+SELECT * FROM tbl_livro;
 
 CREATE TABLE tbl_autor(
     id_autor INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -20,18 +23,28 @@ CREATE TABLE tbl_autor(
 );
 
 INSERT INTO tbl_autor(nome_autor, nacionalidade)
-    VALUES ('Daniel Manoel','Brasileiro');
+    VALUES ('Daniel Manoel','Brasileiro'),
+		('Machado de Assis', 'Brasileiro'),
+            ('J.K. Rowling', 'Britânica');
 
-INSERT INTO tbl_autor (nome_autor, nacionalidade)
-VALUES ('Machado de Assis', 'Brasileiro');
+SELECT nome_autor, nacionalidade FROM tbl_autor;
 
-INSERT INTO tbl_autor (nome_autor, nacionalidade)
-VALUES ('J.K. Rowling', 'Britânica');
-    
+UPDATE tbl_autor
+SET nacionalidade = 'Brasileiro'
+WHERE id_autor = 2;
+
+UPDATE tbl_autor
+SET nome_autor = 'J.K. Rowling (Joanne Rowling)',
+		nacionalidade = 'Britânica (Reino Unido)'
+WHERE id_autor = 3;
+
+DELETE FROM tbl_autor
+WHERE id_autor = 3;
+
 SELECT * FROM tbl_autor;
 
 CREATE TABLE tbl_autor_livro(
-    isbn VARCHAR(16) NOT NULL,
+    isbn VARCHAR(20) NOT NULL,
     id_autor INTEGER NOT NULL,
    
     CONSTRAINT fk_isbn_tbl_autor_livro FOREIGN KEY (isbn)
@@ -48,7 +61,6 @@ CREATE TABLE tbl_exemplar(
    
     CONSTRAINT fk_isbn_tbl_exemplar FOREIGN KEY (isbn)
         REFERENCES tbl_livro(isbn)
-   
 );
 
 CREATE TABLE tbl_emprestimo(
@@ -77,10 +89,15 @@ CREATE TABLE tbl_membro(
     telefone VARCHAR(16) NOT NULL
 );
 
-INSERT INTO tbl_membro(nome_membro, endereco, telefone)
-VALUES ('Heloísa Gabrielly Paixão', 'Sergio Zani, 30, Bela Vista', '11 95628-0221');
+INSERT INTO tbl_membro(id_membro, nome_membro, endereco, telefone)
+VALUES (101, 'Ana Silva', 'Rua A, 123', '11-98765-4321'),
+(102, 'Bruno Costa', 'Av. B, 456', '11-91234-5678'),
+(103, 'Carla Dias', 'Praça C, 789', '11-95555-4444');
+
 SELECT * FROM tbl_membro;
 
 CREATE USER 'estagiario'@'localhost' IDENTIFIED BY 'Mudar123';
 GRANT ALTER ON db_saber_e_cia_b.tbl_livro TO 'estagiario'@'localhost';
 ALTER TABLE tbl_livro ADD COLUMN genero VARCHAR(50);
+
+DROP DATABASE db_saber_e_cia_b;
