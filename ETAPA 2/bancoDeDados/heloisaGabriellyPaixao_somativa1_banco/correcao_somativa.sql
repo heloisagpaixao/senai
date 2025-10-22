@@ -21,6 +21,12 @@ CREATE TABLE tbl_autor(
 
 INSERT INTO tbl_autor(nome_autor, nacionalidade)
     VALUES ('Daniel Manoel','Brasileiro');
+
+INSERT INTO tbl_autor (nome_autor, nacionalidade)
+VALUES ('Machado de Assis', 'Brasileiro');
+
+INSERT INTO tbl_autor (nome_autor, nacionalidade)
+VALUES ('J.K. Rowling', 'Britânica');
     
 SELECT * FROM tbl_autor;
 
