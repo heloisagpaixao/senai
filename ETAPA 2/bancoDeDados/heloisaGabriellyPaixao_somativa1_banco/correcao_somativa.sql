@@ -132,7 +132,7 @@ WHERE id_membro = 102;
 
 SELECT nome_membro FROM tbl_membro;
 
-SELECT titulo_livro, ano_publicacao, ano_publicacao+10 AS ano_revisao
+SELECT titulo_livro, ano_publicacao, ano_publicacao +10 AS ano_revisao
     FROM tbl_livro;
    
 SELECT * FROM tbl_livro
@@ -149,3 +149,6 @@ OR endereco = 'Praca C 789';
 SELECT * FROM tbl_autor
 WHERE NOT nacionalidade = 'Brasileiro'
 AND NOT nacionalidade = 'Brasileira';
+
+SELECT CONCAT(UPPER(nome_autor), '(', nacionalidade, ')')
+AS etiqueta FROM tbl_autor;
