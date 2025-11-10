@@ -209,3 +209,52 @@ INSERT INTO tbl_emprestimo (id_emprestimo, data_emprestimo, data_devolucao, data
 VALUES (501, CURDATE(), CURDATE() + INTERVAL 14 DAY, NULL, 1, 101);
 SELECT * FROM tbl_emprestimo;
 
+SELECT editora, COUNT(isbn) AS quantidade_livros
+FROM tbl_livro
+GROUP BY editora;
+
+INSERT INTO tbl_livro (isbn, titulo_livro, ano_publicacao, editora)
+VALUES ('999-987654-987', 'Esse é o meu livro', 2020, 'Rocco'),
+('999-987654-988', 'Esse é o meu livro 2', 2022, 'Rocco'),
+('999-987654-989', 'Esse é o meu livro 3', 2024, 'Rocco');
+
+SELECT titulo_livro,
+MAX(ano_publicacao) AS ano_publicacao,
+editora
+FROM tbl_livro
+GROUP BY editora;
+
+SELECT editora, COUNT(isbn) AS quantidade_livros
+FROM tbl_livro
+GROUP BY editora
+HAVING COUNT(isbn) >= 2;
+
+SELECT nome_autor AS nome, 'Autor' AS tipo
+FROM tbl_autor
+UNION
+SELECT nome_membro AS nome, 'Membro' AS tipo
+FROM tbl_membro;
+
+SELECT L.titulo_livro, A.nome_autor
+FROM tbl_livro L
+CROSS JOIN tbl_autor A;
+
+INSERT INTO tbl_autor_livro(isbn, id_autor) 
+VALUE ('123-456-789-101-1', 3),
+('978-0-00-711711-0', 7),
+('978-054-542-511-7', 4),
+('978-140-595-531-7', 5),
+('978-85-325-1997-9', 8),
+('978-85-325-2306-8', 7),
+('978-85-325-3078-', 9),
+('978-85-7126-061-', 1),
+('999-987654-987', 6),
+('999-987654-988', 6),
+('999-987654-989', 6);
+
+SELECT * FROM tbl_livro;
+
+SELECT L.titulo_livro, AL.id_autor
+FROM tbl_livro L
+INNER JOIN tbl_autor_livro AL
+ON L.isbn = AL.isbn;
