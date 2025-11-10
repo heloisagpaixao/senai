@@ -252,9 +252,14 @@ VALUE ('123-456-789-101-1', 3),
 ('999-987654-988', 6),
 ('999-987654-989', 6);
 
-SELECT * FROM tbl_livro;
-
 SELECT L.titulo_livro, AL.id_autor
 FROM tbl_livro L
 INNER JOIN tbl_autor_livro AL
 ON L.isbn = AL.isbn;
+
+SELECT L.titulo_livro, A.nome_autor
+FROM tbl_livro L
+INNER JOIN tbl_autor_livro AL
+	ON L.isbn = AL.isbn
+INNER JOIN tbl_autor A
+	ON AL.id_autor = A.id_autor;
