@@ -263,3 +263,26 @@ INNER JOIN tbl_autor_livro AL
 	ON L.isbn = AL.isbn
 INNER JOIN tbl_autor A
 	ON AL.id_autor = A.id_autor;
+    
+SELECT titulo_livro
+FROM tbl_livro
+WHERE isbn IN (
+	SELECT isbn FROM tbl_autor_livro WHERE id_autor IN (
+		SELECT id_autor FROM tbl_autor
+		WHERE nacionalidade LIKE 'Brasileir_'
+	)
+);
+
+SELECT nome_autor
+FROM tbl_autor A
+WHERE EXISTS (
+	SELECT 1 FROM tbl_autor_livro AL
+	WHERE AL.id_autor = A.id_autor
+);
+
+SELECT titulo_livro, ano_publicacao
+FROM tbl_livro
+WHERE ano_publicacao < ANY (
+	SELECT ano_publicacao FROM tbl_livro
+	WHERE editora = 'Aleph'
+);
