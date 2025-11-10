@@ -152,3 +152,60 @@ AND NOT nacionalidade = 'Brasileira';
 
 SELECT CONCAT(UPPER(nome_autor), '(', nacionalidade, ')')
 AS etiqueta FROM tbl_autor;
+
+SELECT ROUND(19.99*1.05,2);
+SELECT FLOOR (19.99*1.05);
+SELECT CEIL (19.99*1.05);
+
+SELECT COUNT(*) AS total_membros
+FROM tbl_membro;
+
+SELECT COUNT(data_devolucao_efetiva) AS total_devolvidos
+FROM tbl_emprestimo;
+
+SELECT MIN(ano_publicacao) AS livro_mais_antigo
+FROM tbl_livro;
+
+SELECT MAX(ano_publicacao) AS livro_mais_novo
+FROM tbl_livro;
+
+INSERT INTO tbl_autor (nome_autor, nacionalidade)
+VALUES ('Clarice Lispector', 'Brasileira'),
+('George Orwell', 'Britânico'),
+('Isaac Asimov', 'Russo-Americano');
+
+INSERT INTO tbl_livro (isbn, titulo_livro, ano_publicacao, editora)
+VALUES ('978-85-325-2306-8', 'A Revolução dos Bichos', 1945, 'Companhia das Letras'),
+('978-0-00-711711-0', '1984', 1949, 'Penguin Books'),
+('978-85-325-1997-9', 'Eu, Robô', 1950, 'Aleph');
+
+SELECT * FROM tbl_membro
+WHERE nome_membro LIKE '%Silva';
+
+SELECT * FROM tbl_livro
+WHERE ano_publicacao BETWEEN 1939 AND 1945;
+
+SELECT * FROM tbl_livro
+WHERE editora IN ('Rocco', 'Aleph');
+
+SELECT * FROM tbl_livro
+WHERE editora NOT IN ('Rocco', 'Aleph');
+
+SELECT CONCAT(UPPER(nome_membro), ' -> (', telefone, ')')
+AS membro_e_contato FROM tbl_membro;
+
+SELECT COUNT(nacionalidade) AS total_brasileiros
+FROM tbl_autor
+WHERE nacionalidade IN ('Brasileiro', 'Brasileira');
+
+SELECT MIN(ano_publicacao) AS menor_ano_publicacao
+FROM tbl_livro
+WHERE editora IN ('Aleph');
+
+INSERT INTO tbl_exemplar(id_exemplar, status_exemplar, isbn)
+VALUES (1, 'Livre', '978-85-325-2306-8');
+
+INSERT INTO tbl_emprestimo (id_emprestimo, data_emprestimo, data_devolucao, data_devolucao_efetiva, id_exemplar, id_membro)
+VALUES (501, CURDATE(), CURDATE() + INTERVAL 14 DAY, NULL, 1, 101);
+SELECT * FROM tbl_emprestimo;
+
