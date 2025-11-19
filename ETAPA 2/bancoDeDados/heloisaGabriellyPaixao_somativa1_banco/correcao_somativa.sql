@@ -286,3 +286,152 @@ WHERE ano_publicacao < ANY (
 	SELECT ano_publicacao FROM tbl_livro
 	WHERE editora = 'Aleph'
 );
+
+INSERT INTO tbl_autor (nome_autor, nacionalidade)
+VALUES ('Frank Herbert', 'Americano');
+
+INSERT INTO tbl_exemplar (id_exemplar, status_exemplar, isbn)
+VALUES (101, 'Disponível', '999-987654-987'),
+(102, 'Emprestado', '999-987654-987'),
+(103, 'Disponível', '978-85-325-2306-8');
+
+SELECT * FROM tbl_livro;
+
+INSERT INTO tbl_emprestimo (id_emprestimo, data_emprestimo, data_devolucao, data_devolucao_efetiva, id_exemplar, id_membro)
+VALUES (502, '2024-10-01', '2024-10-15', NULL, 102, 101);
+
+SELECT isbn, COUNT(*) AS numero_de_copias
+FROM tbl_exemplar
+GROUP BY isbn;
+
+SELECT M.nome_membro, L.titulo_livro, E.data_devolucao
+FROM tbl_membro M
+INNER JOIN tbl_emprestimo E ON
+	M.id_membro = E.id_membro
+    
+INNER JOIN tbl_exemplar EX ON
+	E.id_exemplar = EX.id_exemplar
+
+INNER JOIN  tbl_livro L ON
+	EX.isbn = L.isbn;
+    
+SELECT A.nome_autor, COUNT(AL.isbn) AS quantidade
+FROM tbl_autor A
+LEFT JOIN tbl_autor_livro AL ON
+	A.id_autor = AL.id_autor
+    GROUP BY A.nome_autor;
+    
+SELECT nome_membro FROM tbl_membro
+WHERE id_membro IN (
+	SELECT id_membro FROM tbl_emprestimo
+    WHERE data_devolucao_efetiva IS NULL
+	)
+;
+
+START TRANSACTION;
+UPDATE tbl_membro SET telefone = '11-99999-0000'
+WHERE id_membro = 101;
+COMMIT;
+SELECT * from tbl_membro;
+
+START TRANSACTION;
+INSERT INTO tbl_membro (id_membro, nome_membro, endereco, telefone)
+VALUES (999, 'Membro Teste', 'Rua dos Sábias 22, Bairro dos Pássaros', '11-99998-0001');
+SELECT * FROM tbl_membro;
+/*O 'Membro Teste' existe aqui dentro da transação. */
+
+ROLLBACK;
+SELECT * FROM tbl_membro;
+/*O 'Membro Teste' foi desfeito e nunca existiu. */
+
+START TRANSACTION;
+INSERT INTO tbl_membro (id_membro, nome_membro, endereco, telefone)
+VALUES (900, 'Letícia Souto', 'Rua dos Papagaios', '11-11111-1111');
+SAVEPOINT ponto_A;
+
+INSERT INTO tbl_membro (id_membro, nome_membro, endereco, telefone)
+VALUES (998, 'Mônica Cotrim', 'Rua das Lagartixas', '11-99998-0001');
+SAVEPOINT ponto_B;
+
+INSERT INTO tbl_membro (id_membro, nome_membro, endereco, telefone)
+VALUES (997, 'Paula Sbrissa', 'Rua dos Cachorros', '11-99999-0000');
+
+SELECT * FROM tbl_membro;
+
+ROLLBACK TO SAVEPOINT ponto_A;
+SELECT * FROM tbl_membro;
+
+COMMIT;
+
+CREATE VIEW V_Relatorio_Emprestimos AS
+SELECT
+	M.nome_membro,
+    L.titulo_livro,
+    E.data_emprestimo,
+    E.data_devolucao
+FROM tbl_membro M
+JOIN tbl_emprestimo E ON M.id_membro = E.id_membro
+JOIN tbl_exemplar EX ON E.id_exemplar = EX.id_exemplar
+JOIN tbl_livro L ON EX.isbn =  L.isbn;
+
+/* Em vez de escrever todo o JOIN, agora basta fazer: */
+SELECT * FROM V_Relatorio_Emprestimos
+WHERE nome_membro = 'Ana Silva';
+
+/* DELIMITER é um comando do cliente MySQL para mudar o "fim" do comando. */
+DELIMITER $$
+
+CREATE PROCEDURE sp_novo_emprestimo (
+	IN p_id_exemplar INT,
+    IN p_id_membro INT
+)
+BEGIN
+	INSERT INTO tbl_emprestimo (
+    id_emprestimo,
+    data_emprestimo,
+    data_devolucao,
+    data_devolucao_efetiva,
+    id_exemplar,
+    id_membro
+)
+VALUES (
+	1000,
+	CURDATE(),
+    CURDATE() + INTERVAL 14 DAY, /* Prazo de 14 dias. */
+    NULL,
+    p_id_exemplar,
+    p_id_membro
+);
+
+END$$
+DELIMITER ;
+
+CALL sp_novo_emprestimo (101, 101);
+
+DROP PROCEDURE sp_novo_emprestimo;
+
+DELIMITER $$
+
+CREATE FUNCTION fn_status_membro (p_id_membro INT)
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+	DECLARE v_atrasos INT;
+    
+    SELECT COUNT(*) INTO v_atrasos
+    FROM tbl_emprestimo
+    WHERE id_membro = p_id_membro
+    AND data_devolucao < CURDATE()
+    AND data_devolucao_efetiva IS NULL;
+    
+    IF v_atrasos > 0 THEN
+		RETURN 'Com Atraso';
+	ELSE
+		RETURN 'Regular';
+	END IF;
+END$$
+
+DELIMITER ;
+
+/* Como usar: */
+SELECT nome_membro, fn_status_membro(id_membro) FROM tbl_membro;
