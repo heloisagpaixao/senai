@@ -4,6 +4,8 @@ const app = express()
 
 app.use(express.json())
 
+export default app
+
 const livros = [
     {
         isbn: 1,
@@ -354,5 +356,3 @@ app.delete("/emprestimo/:id_emprestimo", (req, res) => {
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export default app
