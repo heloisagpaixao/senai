@@ -6,9 +6,9 @@
     font-family: Arial, sans-serif;
 }
 
-/* ERRO: Escondendo o foco */
 *:focus {
-    outline: none;
+    outline: 2px solid #ffa500;
+    background-color: #27ae60;
 }
 
 .header {
