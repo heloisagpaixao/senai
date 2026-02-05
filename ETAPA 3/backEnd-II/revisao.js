@@ -116,3 +116,68 @@ Modelo: ${this.modelo}.`)
 
 const carro1 = new Carro("Ford", "Fusion")
 carro1.mostrarDados()
+
+/* ==================================================
+EXERCÍCIO 5 - ENCAPSULAMENTO (Conta)
+
+ Enunciado:
+ Crie uma classe Conta onde:
+ - o saldo seja um atributo privado;
+ - exista um método depositar(valor);
+ - exista um método mostrarSaldo().
+ ==================================================== */
+
+class Conta {
+    #saldo
+    constructor() {
+        this.#saldo = 0
+    }
+
+    depositar(valor) {
+        this.#saldo = this.#saldo + valor
+        console.log(`Foi adicionado R$ ${valor}! Agora você tem R$ ${this.#saldo} na conta.`)
+    }
+
+    mostarSaldo() {
+        console.log(`Você tem R$ ${this.#saldo} na conta!`)
+    }
+}
+
+const conta1 = new Conta()
+conta1.depositar(10)
+conta1.mostarSaldo()
+
+/* ==================================================
+EXERCÍCIO 6 - ENCAPSULAMENTO (Conta)
+
+ Enunciado:
+ Crie uma classe Aluno onde:
+ - a nota seja um atributo privado;
+ - exista um método definirNota(nota);
+ - exista um método mostrarNota().
+ ==================================================== */
+
+class Aluno {
+    #nota
+    constructor() {
+        this.#nota = 0
+    }
+
+    definirNota(nota) {
+        if (this.#nota >= 10 || this.#nota < 0) {
+            console.log(`Você não pode alterar essa nota!`)
+        }
+        else {
+            this.#nota = nota
+            console.log(`Você definiu a nota: ${this.#nota}!`)
+        }
+    }
+
+    mostrarNota() {
+        console.log(`Sua nota: ${this.#nota}.`)
+    }
+}
+
+const aluno1 = new Aluno()
+aluno1.definirNota(8)
+aluno1.mostrarNota()
